@@ -42,3 +42,9 @@ in APPPATH\Controllers\Home.php on line 5.
  6 SYSTEMPATH\CodeIgniter.php(489): CodeIgniter\CodeIgniter->startController()
  7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-01-29 12:08:05 --> ArgumentCountError: Too few arguments to function App\Controllers\BlogPost::create(), 0 passed in C:\xampp\htdocs\ci4\system\CodeIgniter.php on line 941 and exactly 1 expected
+in APPPATH\Controllers\BlogPost.php on line 11.
+ 1 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\BlogPost->create()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BlogPost))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
