@@ -1,0 +1,433 @@
+ERROR - 2024-02-01 05:27:46 --> mysqli_sql_exception: Unknown column 'updated_at' in 'field list' in C:\xampp\htdocs\ci4\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\ci4\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `blog_en...', 0)
+#1 C:\xampp\htdocs\ci4\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `blog_en...')
+#2 C:\xampp\htdocs\ci4\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `blog_en...')
+#3 C:\xampp\htdocs\ci4\system\Database\BaseBuilder.php(2469): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_en...', Array, false)
+#4 C:\xampp\htdocs\ci4\system\Model.php(393): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\xampp\htdocs\ci4\system\BaseModel.php(987): CodeIgniter\Model->doUpdate(Array, Array)
+#6 C:\xampp\htdocs\ci4\system\Model.php(807): CodeIgniter\BaseModel->update(Array, Array)
+#7 C:\xampp\htdocs\ci4\system\BaseModel.php(711): CodeIgniter\Model->update('24', Array)
+#8 C:\xampp\htdocs\ci4\app\Controllers\BlogApp.php(58): CodeIgniter\BaseModel->save(Array)
+#9 C:\xampp\htdocs\ci4\system\CodeIgniter.php(941): App\Controllers\BlogApp->edit('24')
+#10 C:\xampp\htdocs\ci4\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BlogApp))
+#11 C:\xampp\htdocs\ci4\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\ci4\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2024-02-01 05:27:46 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'updated_at' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2469): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_entry` SET `title` = :title:, `content` = :content:, `updated_at` = :updated_at:
+WHERE `blog_entry`.`_id` IN :blog_entry._id:', [...], false)
+ 2 SYSTEMPATH\Model.php(393): CodeIgniter\Database\BaseBuilder->update()
+ 3 SYSTEMPATH\BaseModel.php(987): CodeIgniter\Model->doUpdate([...], [...])
+ 4 SYSTEMPATH\Model.php(807): CodeIgniter\BaseModel->update([...], [...])
+ 5 SYSTEMPATH\BaseModel.php(711): CodeIgniter\Model->update('24', [...])
+ 6 APPPATH\Controllers\BlogApp.php(58): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\BlogApp->edit('24')
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BlogApp))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-01 05:27:46 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'updated_at' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `blog_entry` SET `title` = \'Healthy Habits for a Productive Day\', `content` = \'Discover effective habits that can enhance your productivity and well-being. From morning routines to mindfulness practices, we explore the keys to a successful and fulfilling day\', `updated_at` = \'2024-02-01 05:27:46\'
+WHERE `blog_entry`.`_id` IN (\'24\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `blog_entry` SET `title` = \'Healthy Habits for a Productive Day\', `content` = \'Discover effective habits that can enhance your productivity and well-being. From morning routines to mindfulness practices, we explore the keys to a successful and fulfilling day\', `updated_at` = \'2024-02-01 05:27:46\'
+WHERE `blog_entry`.`_id` IN (\'24\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2469): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_entry` SET `title` = :title:, `content` = :content:, `updated_at` = :updated_at:
+WHERE `blog_entry`.`_id` IN :blog_entry._id:', [...], false)
+ 4 SYSTEMPATH\Model.php(393): CodeIgniter\Database\BaseBuilder->update()
+ 5 SYSTEMPATH\BaseModel.php(987): CodeIgniter\Model->doUpdate([...], [...])
+ 6 SYSTEMPATH\Model.php(807): CodeIgniter\BaseModel->update([...], [...])
+ 7 SYSTEMPATH\BaseModel.php(711): CodeIgniter\Model->update('24', [...])
+ 8 APPPATH\Controllers\BlogApp.php(58): CodeIgniter\BaseModel->save([...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\BlogApp->edit('24')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BlogApp))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-01 05:27:46 --> [Caused by] mysqli_sql_exception: Unknown column 'updated_at' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `blog_entry` SET `title` = \'Healthy Habits for a Productive Day\', `content` = \'Discover effective habits that can enhance your productivity and well-being. From morning routines to mindfulness practices, we explore the keys to a successful and fulfilling day\', `updated_at` = \'2024-02-01 05:27:46\'
+WHERE `blog_entry`.`_id` IN (\'24\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `blog_entry` SET `title` = \'Healthy Habits for a Productive Day\', `content` = \'Discover effective habits that can enhance your productivity and well-being. From morning routines to mindfulness practices, we explore the keys to a successful and fulfilling day\', `updated_at` = \'2024-02-01 05:27:46\'
+WHERE `blog_entry`.`_id` IN (\'24\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `blog_entry` SET `title` = \'Healthy Habits for a Productive Day\', `content` = \'Discover effective habits that can enhance your productivity and well-being. From morning routines to mindfulness practices, we explore the keys to a successful and fulfilling day\', `updated_at` = \'2024-02-01 05:27:46\'
+WHERE `blog_entry`.`_id` IN (\'24\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2469): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_entry` SET `title` = :title:, `content` = :content:, `updated_at` = :updated_at:
+WHERE `blog_entry`.`_id` IN :blog_entry._id:', [...], false)
+ 5 SYSTEMPATH\Model.php(393): CodeIgniter\Database\BaseBuilder->update()
+ 6 SYSTEMPATH\BaseModel.php(987): CodeIgniter\Model->doUpdate([...], [...])
+ 7 SYSTEMPATH\Model.php(807): CodeIgniter\BaseModel->update([...], [...])
+ 8 SYSTEMPATH\BaseModel.php(711): CodeIgniter\Model->update('24', [...])
+ 9 APPPATH\Controllers\BlogApp.php(58): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\BlogApp->edit('24')
+11 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BlogApp))
+12 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-02-01 05:39:21 --> mysqli_sql_exception: Unknown column 'updated_at' in 'field list' in C:\xampp\htdocs\ci4\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\ci4\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `blog_en...', 0)
+#1 C:\xampp\htdocs\ci4\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `blog_en...')
+#2 C:\xampp\htdocs\ci4\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `blog_en...')
+#3 C:\xampp\htdocs\ci4\system\Database\BaseBuilder.php(2469): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_en...', Array, false)
+#4 C:\xampp\htdocs\ci4\system\Model.php(393): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\xampp\htdocs\ci4\system\BaseModel.php(987): CodeIgniter\Model->doUpdate(Array, Array)
+#6 C:\xampp\htdocs\ci4\system\Model.php(807): CodeIgniter\BaseModel->update(Array, Array)
+#7 C:\xampp\htdocs\ci4\system\BaseModel.php(711): CodeIgniter\Model->update('24', Array)
+#8 C:\xampp\htdocs\ci4\app\Controllers\BlogApp.php(58): CodeIgniter\BaseModel->save(Array)
+#9 C:\xampp\htdocs\ci4\system\CodeIgniter.php(941): App\Controllers\BlogApp->edit('24')
+#10 C:\xampp\htdocs\ci4\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BlogApp))
+#11 C:\xampp\htdocs\ci4\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\ci4\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2024-02-01 05:39:21 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'updated_at' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2469): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_entry` SET `title` = :title:, `content` = :content:, `updated_at` = :updated_at:
+WHERE `blog_entry`.`_id` IN :blog_entry._id:', [...], false)
+ 2 SYSTEMPATH\Model.php(393): CodeIgniter\Database\BaseBuilder->update()
+ 3 SYSTEMPATH\BaseModel.php(987): CodeIgniter\Model->doUpdate([...], [...])
+ 4 SYSTEMPATH\Model.php(807): CodeIgniter\BaseModel->update([...], [...])
+ 5 SYSTEMPATH\BaseModel.php(711): CodeIgniter\Model->update('24', [...])
+ 6 APPPATH\Controllers\BlogApp.php(58): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\BlogApp->edit('24')
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BlogApp))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-01 05:39:21 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'updated_at' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `blog_entry` SET `title` = \'Healthy Habits for a Productive Day\', `content` = \'Discover effective habits that can enhance your productivity and well-being. From morning routines to mindfulness practices, we explore the keys to a successful and fulfilling day\', `updated_at` = \'2024-02-01 05:39:21\'
+WHERE `blog_entry`.`_id` IN (\'24\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `blog_entry` SET `title` = \'Healthy Habits for a Productive Day\', `content` = \'Discover effective habits that can enhance your productivity and well-being. From morning routines to mindfulness practices, we explore the keys to a successful and fulfilling day\', `updated_at` = \'2024-02-01 05:39:21\'
+WHERE `blog_entry`.`_id` IN (\'24\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2469): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_entry` SET `title` = :title:, `content` = :content:, `updated_at` = :updated_at:
+WHERE `blog_entry`.`_id` IN :blog_entry._id:', [...], false)
+ 4 SYSTEMPATH\Model.php(393): CodeIgniter\Database\BaseBuilder->update()
+ 5 SYSTEMPATH\BaseModel.php(987): CodeIgniter\Model->doUpdate([...], [...])
+ 6 SYSTEMPATH\Model.php(807): CodeIgniter\BaseModel->update([...], [...])
+ 7 SYSTEMPATH\BaseModel.php(711): CodeIgniter\Model->update('24', [...])
+ 8 APPPATH\Controllers\BlogApp.php(58): CodeIgniter\BaseModel->save([...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\BlogApp->edit('24')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BlogApp))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-01 05:39:21 --> [Caused by] mysqli_sql_exception: Unknown column 'updated_at' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `blog_entry` SET `title` = \'Healthy Habits for a Productive Day\', `content` = \'Discover effective habits that can enhance your productivity and well-being. From morning routines to mindfulness practices, we explore the keys to a successful and fulfilling day\', `updated_at` = \'2024-02-01 05:39:21\'
+WHERE `blog_entry`.`_id` IN (\'24\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `blog_entry` SET `title` = \'Healthy Habits for a Productive Day\', `content` = \'Discover effective habits that can enhance your productivity and well-being. From morning routines to mindfulness practices, we explore the keys to a successful and fulfilling day\', `updated_at` = \'2024-02-01 05:39:21\'
+WHERE `blog_entry`.`_id` IN (\'24\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `blog_entry` SET `title` = \'Healthy Habits for a Productive Day\', `content` = \'Discover effective habits that can enhance your productivity and well-being. From morning routines to mindfulness practices, we explore the keys to a successful and fulfilling day\', `updated_at` = \'2024-02-01 05:39:21\'
+WHERE `blog_entry`.`_id` IN (\'24\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2469): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_entry` SET `title` = :title:, `content` = :content:, `updated_at` = :updated_at:
+WHERE `blog_entry`.`_id` IN :blog_entry._id:', [...], false)
+ 5 SYSTEMPATH\Model.php(393): CodeIgniter\Database\BaseBuilder->update()
+ 6 SYSTEMPATH\BaseModel.php(987): CodeIgniter\Model->doUpdate([...], [...])
+ 7 SYSTEMPATH\Model.php(807): CodeIgniter\BaseModel->update([...], [...])
+ 8 SYSTEMPATH\BaseModel.php(711): CodeIgniter\Model->update('24', [...])
+ 9 APPPATH\Controllers\BlogApp.php(58): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\BlogApp->edit('24')
+11 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BlogApp))
+12 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-02-01 05:39:29 --> mysqli_sql_exception: Unknown column 'updated_at' in 'field list' in C:\xampp\htdocs\ci4\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\ci4\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `blog_en...', 0)
+#1 C:\xampp\htdocs\ci4\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `blog_en...')
+#2 C:\xampp\htdocs\ci4\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `blog_en...')
+#3 C:\xampp\htdocs\ci4\system\Database\BaseBuilder.php(2469): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_en...', Array, false)
+#4 C:\xampp\htdocs\ci4\system\Model.php(393): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\xampp\htdocs\ci4\system\BaseModel.php(987): CodeIgniter\Model->doUpdate(Array, Array)
+#6 C:\xampp\htdocs\ci4\system\Model.php(807): CodeIgniter\BaseModel->update(Array, Array)
+#7 C:\xampp\htdocs\ci4\system\BaseModel.php(711): CodeIgniter\Model->update('24', Array)
+#8 C:\xampp\htdocs\ci4\app\Controllers\BlogApp.php(58): CodeIgniter\BaseModel->save(Array)
+#9 C:\xampp\htdocs\ci4\system\CodeIgniter.php(941): App\Controllers\BlogApp->edit('24')
+#10 C:\xampp\htdocs\ci4\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BlogApp))
+#11 C:\xampp\htdocs\ci4\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\ci4\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2024-02-01 05:39:29 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'updated_at' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2469): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_entry` SET `title` = :title:, `content` = :content:, `updated_at` = :updated_at:
+WHERE `blog_entry`.`_id` IN :blog_entry._id:', [...], false)
+ 2 SYSTEMPATH\Model.php(393): CodeIgniter\Database\BaseBuilder->update()
+ 3 SYSTEMPATH\BaseModel.php(987): CodeIgniter\Model->doUpdate([...], [...])
+ 4 SYSTEMPATH\Model.php(807): CodeIgniter\BaseModel->update([...], [...])
+ 5 SYSTEMPATH\BaseModel.php(711): CodeIgniter\Model->update('24', [...])
+ 6 APPPATH\Controllers\BlogApp.php(58): CodeIgniter\BaseModel->save([...])
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\BlogApp->edit('24')
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BlogApp))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-01 05:39:29 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'updated_at' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `blog_entry` SET `title` = \'Healthy Habits for a Productive Day\', `content` = \'Discover effective habits that can enhance your productivity and well-being. From morning routines to mindfulness practices, we explore the keys to a successful and fulfilling day\', `updated_at` = \'2024-02-01 05:39:29\'
+WHERE `blog_entry`.`_id` IN (\'24\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `blog_entry` SET `title` = \'Healthy Habits for a Productive Day\', `content` = \'Discover effective habits that can enhance your productivity and well-being. From morning routines to mindfulness practices, we explore the keys to a successful and fulfilling day\', `updated_at` = \'2024-02-01 05:39:29\'
+WHERE `blog_entry`.`_id` IN (\'24\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2469): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_entry` SET `title` = :title:, `content` = :content:, `updated_at` = :updated_at:
+WHERE `blog_entry`.`_id` IN :blog_entry._id:', [...], false)
+ 4 SYSTEMPATH\Model.php(393): CodeIgniter\Database\BaseBuilder->update()
+ 5 SYSTEMPATH\BaseModel.php(987): CodeIgniter\Model->doUpdate([...], [...])
+ 6 SYSTEMPATH\Model.php(807): CodeIgniter\BaseModel->update([...], [...])
+ 7 SYSTEMPATH\BaseModel.php(711): CodeIgniter\Model->update('24', [...])
+ 8 APPPATH\Controllers\BlogApp.php(58): CodeIgniter\BaseModel->save([...])
+ 9 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\BlogApp->edit('24')
+10 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BlogApp))
+11 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-01 05:39:29 --> [Caused by] mysqli_sql_exception: Unknown column 'updated_at' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE `blog_entry` SET `title` = \'Healthy Habits for a Productive Day\', `content` = \'Discover effective habits that can enhance your productivity and well-being. From morning routines to mindfulness practices, we explore the keys to a successful and fulfilling day\', `updated_at` = \'2024-02-01 05:39:29\'
+WHERE `blog_entry`.`_id` IN (\'24\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `blog_entry` SET `title` = \'Healthy Habits for a Productive Day\', `content` = \'Discover effective habits that can enhance your productivity and well-being. From morning routines to mindfulness practices, we explore the keys to a successful and fulfilling day\', `updated_at` = \'2024-02-01 05:39:29\'
+WHERE `blog_entry`.`_id` IN (\'24\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `blog_entry` SET `title` = \'Healthy Habits for a Productive Day\', `content` = \'Discover effective habits that can enhance your productivity and well-being. From morning routines to mindfulness practices, we explore the keys to a successful and fulfilling day\', `updated_at` = \'2024-02-01 05:39:29\'
+WHERE `blog_entry`.`_id` IN (\'24\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2469): CodeIgniter\Database\BaseConnection->query('UPDATE `blog_entry` SET `title` = :title:, `content` = :content:, `updated_at` = :updated_at:
+WHERE `blog_entry`.`_id` IN :blog_entry._id:', [...], false)
+ 5 SYSTEMPATH\Model.php(393): CodeIgniter\Database\BaseBuilder->update()
+ 6 SYSTEMPATH\BaseModel.php(987): CodeIgniter\Model->doUpdate([...], [...])
+ 7 SYSTEMPATH\Model.php(807): CodeIgniter\BaseModel->update([...], [...])
+ 8 SYSTEMPATH\BaseModel.php(711): CodeIgniter\Model->update('24', [...])
+ 9 APPPATH\Controllers\BlogApp.php(58): CodeIgniter\BaseModel->save([...])
+10 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\BlogApp->edit('24')
+11 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BlogApp))
+12 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-01 06:38:21 --> ErrorException: Undefined variable $encrypter
+in APPPATH\Views\display_blogs.php on line 36.
+ 1 APPPATH\Views\display_blogs.php(36): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $encrypter', 'C:\\xampp\\htdocs\\ci4\\app\\Views\\display_blogs.php', 36)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\ci4\\app\\Views\\display_blogs.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('display_blogs', [], true)
+ 5 APPPATH\Controllers\BlogApp.php(38): view('display_blogs', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\BlogApp->displayAllBlog()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BlogApp))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-01 06:41:48 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Controllers\BlogApp.php on line 66.
+ 1 APPPATH\Controllers\BlogApp.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\ci4\\app\\Controllers\\BlogApp.php', 66)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\BlogApp->edit('z��$a����]��i���OY')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BlogApp))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-01 06:48:35 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Controllers\BlogApp.php on line 76.
+ 1 APPPATH\Controllers\BlogApp.php(76): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\ci4\\app\\Controllers\\BlogApp.php', 76)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\BlogApp->edit('�UmQ�I����E��� �3��T����j7�RX$o�R7')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BlogApp))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-01 06:50:08 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Controllers\BlogApp.php on line 76.
+ 1 APPPATH\Controllers\BlogApp.php(76): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\ci4\\app\\Controllers\\BlogApp.php', 76)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\BlogApp->edit('�UmQ�I����E��� �3��T����j7�RX$o�R7')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BlogApp))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-01 06:50:12 --> ErrorException: Trying to access array offset on value of type null
+in APPPATH\Controllers\BlogApp.php on line 76.
+ 1 APPPATH\Controllers\BlogApp.php(76): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\ci4\\app\\Controllers\\BlogApp.php', 76)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\BlogApp->edit('�B;� �Ky�@���h ����SOjPʗ�n���V���A��9�v��X*P�x�Q@9-��ոOnŊ��z��S�$����')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BlogApp))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-01 06:51:50 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\BlogApp.php(67): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('�7����B@;$�1:�c2�b�f2�� �H$K��ҥP��*nΉc�*�>j')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\BlogApp->edit('�|�2R�&V>�;JN�X&m����RJ����\'s��[�7����B@;$�1:�c2�b�f2�� �H$K��ҥP��*nΉc�*�>j')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BlogApp))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-01 06:52:55 --> CodeIgniter\Encryption\Exceptions\EncryptionException: Decrypting: authentication failed.
+in SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php on line 139.
+ 1 SYSTEMPATH\Encryption\Handlers\OpenSSLHandler.php(139): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+ 2 APPPATH\Controllers\BlogApp.php(51): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('�FF�j}�')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\BlogApp->delete('��_������`��P`)��$��������FF�j}�', '����DS�EwF�ȩDd��V�3�)���j� �ݚa�⌏�')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BlogApp))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-01 07:01:03 --> ErrorException: Undefined variable $hasedId
+in APPPATH\Controllers\BlogApp.php on line 66.
+ 1 APPPATH\Controllers\BlogApp.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $hasedId', 'C:\\xampp\\htdocs\\ci4\\app\\Controllers\\BlogApp.php', 66)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\BlogApp->edit('c9903a624bc61833a1c2ffdc4354a29e1d9f2a6453cb379a3dc7868c5caf2d346027d9ff7d8ecffdcc379618d7984f0a7e62dc54cec4b3c200c4614174a57f4b769bc12e362a031ab22bbc8a71f7237786e6')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BlogApp))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-01 07:05:42 --> ErrorException: Undefined variable $decryptedId
+in APPPATH\Controllers\BlogApp.php on line 65.
+ 1 APPPATH\Controllers\BlogApp.php(65): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $decryptedId', 'C:\\xampp\\htdocs\\ci4\\app\\Controllers\\BlogApp.php', 65)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\BlogApp->edit('c9903a624bc61833a1c2ffdc4354a29e1d9f2a6453cb379a3dc7868c5caf2d346027d9ff7d8ecffdcc379618d7984f0a7e62dc54cec4b3c200c4614174a57f4b769bc12e362a031ab22bbc8a71f7237786e6')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BlogApp))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-01 07:05:48 --> ErrorException: Undefined variable $decryptedId
+in APPPATH\Controllers\BlogApp.php on line 65.
+ 1 APPPATH\Controllers\BlogApp.php(65): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $decryptedId', 'C:\\xampp\\htdocs\\ci4\\app\\Controllers\\BlogApp.php', 65)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\BlogApp->edit('cb09c4a6d48a49e6fc0c3b9c0f1bfe535c573d49646f9fdf9a7dc076719ca0b2b375219158ede9c97220eadd08a625f124c04b455c1d8d608ebdb9b030f723fa4112b48da4e313b370fbae747e00d4e591c9')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BlogApp))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-01 07:06:33 --> Error: Call to undefined function App\Controllers\decryptedId()
+in APPPATH\Controllers\BlogApp.php on line 65.
+ 1 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\BlogApp->edit('f5256acb5befc4f264e3ccfe1d453021335265cfca8c8def7a972472c4bf2cafa1690f87226fce4aed788cb51257092081d8bc541fe781984dc1363181cc5e658e459fd603fc75223236d0cd5a96a36727a6')
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BlogApp))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-01 07:07:38 --> Error: Call to undefined method App\Controllers\BlogApp::decryptedId()
+in APPPATH\Controllers\BlogApp.php on line 65.
+ 1 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\BlogApp->edit('c3aa4efc4ac404cc08567ecf61b6155c90a4fdec9205530610af359aab005b675d678daec132e751ce832782fbcf27dac008846116b6a1325245b57d24c82b6bf13ceecb83430ca515b86b09e5f043f615ba')
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BlogApp))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-01 07:08:37 --> Error: Call to undefined method App\Controllers\BlogApp::decryptedId()
+in APPPATH\Controllers\BlogApp.php on line 65.
+ 1 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\BlogApp->edit('e6e391daa82a9ede94f5c68f6a88ac7b2d89ed31ab1ed967f544002844fe9bca8b4dd84cdfe6796a2ceb4a1d976946f2994a1a3a1ddcce36b678c0b0e0bcb4ba5c71dd6893657987f5339b627e6dcef1e718')
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BlogApp))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-01 07:09:40 --> Error: Call to undefined method App\Controllers\BlogApp::decryptedId()
+in APPPATH\Controllers\BlogApp.php on line 65.
+ 1 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\BlogApp->edit('e6e391daa82a9ede94f5c68f6a88ac7b2d89ed31ab1ed967f544002844fe9bca8b4dd84cdfe6796a2ceb4a1d976946f2994a1a3a1ddcce36b678c0b0e0bcb4ba5c71dd6893657987f5339b627e6dcef1e718')
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BlogApp))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-01 07:09:43 --> Error: Call to undefined method App\Controllers\BlogApp::decryptedId()
+in APPPATH\Controllers\BlogApp.php on line 65.
+ 1 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\BlogApp->edit('adf48fe5ddffcb7ffbcaf37876f7cdbceb4b95080b7419d5bf97d349f6921bd41c2877f8f3aca90321fa849b956f9f23136cbccf8e0127ecb99904d0abed8750e5ebc293f5eb788be94def8c7342424f9c80')
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BlogApp))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-01 07:10:22 --> Error: Call to undefined method App\Controllers\BlogApp::decryptedId()
+in APPPATH\Controllers\BlogApp.php on line 65.
+ 1 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\BlogApp->edit('92ec9980a2ecfb31316e2f796bee6c163fdaf73b24377ada851a873e59f6db695fdbe981671a6c4844315d7c20617977737af9a4837de41bac117ef6b3f980619f5a80d483dd768feb7d36262c200acad990')
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BlogApp))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-01 07:11:31 --> ErrorException: Undefined variable $encryptedId
+in APPPATH\Controllers\BlogApp.php on line 49.
+ 1 APPPATH\Controllers\BlogApp.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $encryptedId', 'C:\\xampp\\htdocs\\ci4\\app\\Controllers\\BlogApp.php', 49)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\BlogApp->delete('9fcf9f5ecb936db6903caff7a1908811065d62dd21d836f154ca4571f89c16977f030e01375af31cfc81c90e708df7f9ded323948a53575e9a262d87189ffa5a92d58369b60a324ee52ecb34ad6a418a0759')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BlogApp))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-01 07:23:38 --> ParseError: syntax error, unexpected token "}", expecting variable
+in APPPATH\Controllers\BlogApp.php on line 91.
+ 1 SYSTEMPATH\Router\Router.php(514): CodeIgniter\Router\AutoRouter->getRoute('blogapp', 'get')
+ 2 SYSTEMPATH\Router\Router.php(210): CodeIgniter\Router\Router->autoRoute('blogapp')
+ 3 SYSTEMPATH\CodeIgniter.php(823): CodeIgniter\Router\Router->handle('blogapp')
+ 4 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-01 08:06:24 --> Error: Call to a member function isValid() on string
+in APPPATH\Controllers\BlogApp.php on line 95.
+ 1 APPPATH\Controllers\BlogApp.php(17): App\Controllers\BlogApp->saveImage('download (1).jpeg')
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\BlogApp->create()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BlogApp))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-01 08:07:46 --> Error: Call to a member function isValid() on null
+in APPPATH\Controllers\BlogApp.php on line 95.
+ 1 APPPATH\Controllers\BlogApp.php(17): App\Controllers\BlogApp->saveImage(null)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\BlogApp->create()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BlogApp))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-01 08:10:36 --> Error: Call to a member function isValid() on null
+in APPPATH\Controllers\BlogApp.php on line 95.
+ 1 APPPATH\Controllers\BlogApp.php(17): App\Controllers\BlogApp->saveImage(null)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\BlogApp->create()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BlogApp))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-01 08:31:25 --> Error: Call to a member function isValid() on null
+in APPPATH\Controllers\BlogApp.php on line 95.
+ 1 APPPATH\Controllers\BlogApp.php(18): App\Controllers\BlogApp->saveImage(null)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\BlogApp->create()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BlogApp))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-01 08:31:42 --> Error: Call to a member function isValid() on string
+in APPPATH\Controllers\BlogApp.php on line 95.
+ 1 APPPATH\Controllers\BlogApp.php(18): App\Controllers\BlogApp->saveImage('download (1).jpeg')
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\BlogApp->create()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BlogApp))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-01 08:31:56 --> Error: Call to a member function isValid() on null
+in APPPATH\Controllers\BlogApp.php on line 95.
+ 1 APPPATH\Controllers\BlogApp.php(18): App\Controllers\BlogApp->saveImage(null)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\BlogApp->create()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BlogApp))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-01 08:32:41 --> Error: Call to a member function isValid() on string
+in APPPATH\Controllers\BlogApp.php on line 96.
+ 1 APPPATH\Controllers\BlogApp.php(19): App\Controllers\BlogApp->saveImage('download (1).jpeg')
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\BlogApp->create()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BlogApp))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-01 08:35:11 --> Error: Call to undefined function App\Controllers\isValid()
+in APPPATH\Controllers\BlogApp.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\BlogApp->create()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BlogApp))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-01 08:35:24 --> Error: Call to undefined function App\Controllers\isValid()
+in APPPATH\Controllers\BlogApp.php on line 17.
+ 1 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\BlogApp->create()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BlogApp))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-01 08:40:39 --> ErrorException: Attempt to read property "isValid" on null
+in APPPATH\Controllers\BlogApp.php on line 18.
+ 1 APPPATH\Controllers\BlogApp.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "isValid" on null', 'C:\\xampp\\htdocs\\ci4\\app\\Controllers\\BlogApp.php', 18)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\BlogApp->create()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BlogApp))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-01 08:41:08 --> ErrorException: Attempt to read property "isValid" on string
+in APPPATH\Controllers\BlogApp.php on line 18.
+ 1 APPPATH\Controllers\BlogApp.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "isValid" on string', 'C:\\xampp\\htdocs\\ci4\\app\\Controllers\\BlogApp.php', 18)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\BlogApp->create()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BlogApp))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-01 08:42:28 --> ErrorException: Undefined array key "image"
+in APPPATH\Controllers\BlogApp.php on line 16.
+ 1 APPPATH\Controllers\BlogApp.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "image"', 'C:\\xampp\\htdocs\\ci4\\app\\Controllers\\BlogApp.php', 16)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\BlogApp->create()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BlogApp))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-01 08:43:43 --> ParseError: syntax error, unexpected token "public"
+in APPPATH\Controllers\BlogApp.php on line 63.
+ 1 SYSTEMPATH\Router\Router.php(514): CodeIgniter\Router\AutoRouter->getRoute('blogapp', 'get')
+ 2 SYSTEMPATH\Router\Router.php(210): CodeIgniter\Router\Router->autoRoute('blogapp')
+ 3 SYSTEMPATH\CodeIgniter.php(823): CodeIgniter\Router\Router->handle('blogapp')
+ 4 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-01 08:45:33 --> Error: Call to a member function isValid() on null
+in APPPATH\Controllers\BlogApp.php on line 22.
+ 1 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\BlogApp->create()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BlogApp))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-01 08:54:15 --> ParseError: syntax error, unexpected token "public", expecting end of file
+in APPPATH\Controllers\BlogApp.php on line 62.
+ 1 SYSTEMPATH\Router\Router.php(514): CodeIgniter\Router\AutoRouter->getRoute('blogapp', 'get')
+ 2 SYSTEMPATH\Router\Router.php(210): CodeIgniter\Router\Router->autoRoute('blogapp')
+ 3 SYSTEMPATH\CodeIgniter.php(823): CodeIgniter\Router\Router->handle('blogapp')
+ 4 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-01 08:54:39 --> ErrorException: Undefined property: CodeIgniter\HTTP\Files\UploadedFile::$isValid
+in APPPATH\Controllers\BlogApp.php on line 43.
+ 1 APPPATH\Controllers\BlogApp.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\HTTP\\Files\\UploadedFile::$isValid', 'C:\\xampp\\htdocs\\ci4\\app\\Controllers\\BlogApp.php', 43)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\BlogApp->create()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BlogApp))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

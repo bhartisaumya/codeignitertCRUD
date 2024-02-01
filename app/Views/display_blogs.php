@@ -1,4 +1,51 @@
-<?php
+<!-- File: app/Views/blog_table.php -->
 
-echo "Title: $title";
-echo "Content: $content";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Data Table</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<?php include('template/header.php'); ?>
+
+<body>
+
+    <div class="container mt-5">
+        <h2>Blog Data Table</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Content</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($blogData as $row): ?>
+                    <tr>
+                        <td><?= $row['_id']; ?></td>
+                        <td><?= $row['title']; ?></td>
+                        <td><?= $row['content']; ?></td>
+                        <td>
+                            <!-- $encryptedId = $encrypter->encrypt($row['_id']) -->
+                            
+                            <a href="./edit/<?= bin2hex($encrypter->encrypt($row['_id'])) ?>"><button class="edit-btn">Edit</button></a>
+                            <a href="./delete/<?= bin2hex($encrypter->encrypt($row['_id'])) ?>"><button class="delete-btn">Delete</button> </a>
+                        </td>
+                    </tr>                    
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>

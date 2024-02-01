@@ -6,21 +6,21 @@ use CodeIgniter\Model;
 
 class BlogModel extends Model
 {
-    protected $table      = 'blog_entry';
+    protected $table      = 'new_blog_entry';
     protected $primaryKey = '_id';
 
     protected $useAutoIncrement = true; 
 
-    protected $allowedFields = ['title', 'content', 'created_at'];
+    protected $allowedFields = ['title', 'content', 'created_at', 'updated_at', 'deleted_at', 'imageName'];
 
     // protected bool $allowEmptyInserts = false;
 
     // // Dates
-    // protected $useTimestamps = true;
-    // protected $dateFormat    = 'datetime';
-    // protected $createdField  = 'created_at';
-    // protected $updatedField  = 'updated_at';
-    // protected $deletedField  = 'deleted_at';
+    protected $useTimestamps = true;
+    protected $dateFormat    = 'datetime';
+    protected $createdField  = 'created_at';
+    protected $updatedField  = 'updated_at';
+    protected $deletedField  = 'deleted_at';
 
     // // Validation
     // protected $validationRules      = [];

@@ -64,24 +64,19 @@
 </head>
 <?php include('template/header.php'); ?>
 <body>
-    <form action="blogapp/create" method="post" enctype="multipart/form-data">
+    <form method="post">
         <div class="form-group">
           <label for="title">Title</label>
           <input type="text"
-            class="form-control" name="title" id="title" aria-describedby="helpId" placeholder="Title...">
+            class="form-control" name="title" id="title" aria-describedby="helpId" value="<?= $title ?>">
         </div>
 
         <div class="form-group">
           <label for="content">Content</label>
           <input type="text"
-            class="form-control" name="content" id="content" aria-describedby="helpId" placeholder="Content...">
+            class="form-control" name="content" id="content" aria-describedby="helpId" value="<?= $content ?>">
         </div>
-
-        <div class="form-group">
-          <label for="image">Attach Image</label>
-          <input type="file" name="image" aria-describedby="helpId" placeholder="Image...">
-        </div>
-        <button type="submit" id="submit-btn" class="btn btn-primary btn-lg btn-block">Submit</button>
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Update</button>
     </form>    
 </body>
 </html>
