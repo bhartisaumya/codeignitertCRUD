@@ -8,6 +8,12 @@
     <title>Blog Data Table</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        img{
+            width: 40px;
+            height: 40px;
+        }
+    </style>
 </head>
 <?php include('template/header.php'); ?>
 
@@ -21,6 +27,7 @@
                     <th>ID</th>
                     <th>Title</th>
                     <th>Content</th>
+                    <th>Images</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -30,6 +37,11 @@
                         <td><?= $row['_id']; ?></td>
                         <td><?= $row['title']; ?></td>
                         <td><?= $row['content']; ?></td>
+                        <td>
+                        <?php if (!empty($row['imageName'])): ?>
+                            <img src="<?= base_url('uploads/' . $row['imageName']); ?>" alt="Blog Image">
+                        <?php endif; ?>
+                        </td>
                         <td>
                             <!-- $encryptedId = $encrypter->encrypt($row['_id']) -->
                             

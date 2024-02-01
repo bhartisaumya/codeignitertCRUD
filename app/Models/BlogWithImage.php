@@ -4,9 +4,9 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class BlogModel extends Model
+class BlogWithImage extends Model
 {
-    protected $table      = 'new_blog_entry';
+    protected $table      = 'new_blog_data';
     protected $primaryKey = '_id';
 
     protected $useAutoIncrement = true; 

@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Models\BlogModel;
+use App\Models\BlogWithImage;
 
 class BlogApp extends BaseController
 {
@@ -19,17 +19,15 @@ class BlogApp extends BaseController
         $uniqueName = $this->saveImage($image);
 
         if($this->request->getMethod() == 'post'){
-            $blogModel = new BlogModel();
-            $blogModel->save([
+            $blogWithImage = new BlogWithImage();
+            $blogWithImage->save([
                 'title' => $title,
                 'content' => $content,
-                'imageName' => [$uniqueName]
+                'imageName' => $uniqueName
             ]);
         }
 
         return $this->displayAllBlog(); 
-
-
 
 
 
@@ -77,9 +75,8 @@ class BlogApp extends BaseController
     }
 
     public function displayAllBlog(){
-        $blogModel = new BlogModel(); 
-
-        $allBlogData = $blogModel->getBlogData();
+        $blogWithImage = new BlogWithImage(); 
+        $allBlogData = $blogWithImage->getBlogData();
 
         // foreach($allBlogData as $one){
         //     echo $one['_id'] . "<br>";
@@ -101,11 +98,11 @@ class BlogApp extends BaseController
 
         $_id = $this->decryptId($encryptedId);
 
-        $blogModel = new BlogModel();
-        $post = $blogModel->find($_id);
+        $blogWithImage = new BlogWithImage();
+        $post = $blogWithImage->find($_id);
 
         if($post){
-            $blogModel->delete($_id);
+            $blogWithImage->delete($_id);
             return redirect()->to('/blogapp/displayAllBlog');
         }
     }
@@ -114,11 +111,11 @@ class BlogApp extends BaseController
 
         $_id = $this->decryptId($encryptedId);
 
-        $blogModel = new BlogModel();
-        $post = $blogModel->find($_id);
+        $blogWithImage = new BlogWithImage();
+        $post = $blogWithImage->find($_id);
 
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
-            $model = new BlogModel();
+            $model = new BlogWithImage();
             $_POST['_id'] = $_id;
             $model->save($_POST);
             return redirect()->to('/blogapp/displayAllBlog');
@@ -140,10 +137,10 @@ class BlogApp extends BaseController
         return $decryptedId;
     }
 
-    protected function saveImage($image, $_id){
+    protected function saveImage($image){
         if($image->isValid() && !$image->hasMoved()){
             $uniqueName = $image->getRandomName();
-            $image->move('./uploads', $newName);
+            $image->move('./uploads', $uniqueName);
             return $uniqueName;
         }
         else{
