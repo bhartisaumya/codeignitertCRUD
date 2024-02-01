@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <style>
         img{
-            width: 40px;
-            height: 40px;
+            width: 100px;
+            height: 60px;
         }
     </style>
 </head>
@@ -24,7 +24,6 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>ID</th>
                     <th>Title</th>
                     <th>Content</th>
                     <th>Images</th>
@@ -34,7 +33,6 @@
             <tbody>
                 <?php foreach ($blogData as $row): ?>
                     <tr>
-                        <td><?= $row['_id']; ?></td>
                         <td><?= $row['title']; ?></td>
                         <td><?= $row['content']; ?></td>
                         <td>

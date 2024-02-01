@@ -78,8 +78,8 @@
         </div>
 
         <div class="form-group">
-          <label for="image">Attach Image</label>
-          <input type="file" name="image" aria-describedby="helpId" placeholder="Image...">
+          <label for="images">Attach Image</label>
+          <input type="file" name="images" aria-describedby="helpId" multiple='true' accept="image/*">
         </div>
         <button type="submit" id="submit-btn" class="btn btn-primary btn-lg btn-block">Submit</button>
     </form>    

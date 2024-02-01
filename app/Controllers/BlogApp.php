@@ -14,63 +14,24 @@ class BlogApp extends BaseController
         $title = $this->request->getPost('title');
         $content = $this->request->getPost('content');
 
-        $image = $this->request->getFile('image');
+        $images = $this->request->getFile('images');
 
-        $uniqueName = $this->saveImage($image);
+        $uniqueNames = $this->saveImage($images);
+
+        foreach($uniqueNames as $name){
+            echo $name;
+        }
 
         if($this->request->getMethod() == 'post'){
             $blogWithImage = new BlogWithImage();
             $blogWithImage->save([
                 'title' => $title,
                 'content' => $content,
-                'imageName' => $uniqueName
+                'imageName' => json_encode($uniqueNames)
             ]);
         }
 
-        return $this->displayAllBlog(); 
-
-
-
-    // // Check if the file exists and is valid
-    // if ($image->isValid() && !$image->hasMoved()) {
-        // Generate a unique name for the file
-        // $newName = $image->getRandomName();
-        // echo $newName;
-
-    //     // Move the file to the desired directory
-        // $image->move('./uploads', $newName);
-
-    //     // Now you can use $title, $content, and $newName for further processing
-
-    //     // Example: Save data to the database
-    //     $blogModel = new BlogModel();
-    //     $blogModel->save([
-    //         'title' => $title,
-    //         'content' => $content,
-    //         'image' => $newName, // Save the file name in the database
-    //     ]);
-
-    //     return redirect()->to('/blogapp/displayAllBlog');
-        // $title = $this->request->getPost('title');
-        // $content = $this->request->getPost('content');
-    // }
-
-        // if($image)
-        //     echo $image;
-        // else
-        //     echo "Not";
-        // echo $image;
-
-        // $uniqueName = $this->saveImage($image);
-        // echo $uniqueName;
-
-
-        // if($this->request->getMethod() == 'post'){
-        //     $blogModel = new BlogModel();
-        //     $blogModel->save($_POST);
-        // }
-
-        // return $this->displayAllBlog();      
+        return $this->displayAllBlog();    
 
     }
 
@@ -137,15 +98,19 @@ class BlogApp extends BaseController
         return $decryptedId;
     }
 
-    protected function saveImage($image){
-        if($image->isValid() && !$image->hasMoved()){
-            $uniqueName = $image->getRandomName();
-            $image->move('./uploads', $uniqueName);
-            return $uniqueName;
+    protected function saveImage($images){
+        $uploadedNames = [];
+        foreach($images as $image){
+            if($image->isValid() && !$image->hasMoved()){
+                $name = $image->getRandomName();
+                $image->move('./uploads', $name);
+                array_push($uploadedNames, $name);
+                echo $name;
+                // $uploadedNames[] = $uniqueName;
+            }
+
         }
-        else{
-            return "-1";
-        }
+        return $uploadedNames;
     }
 
 }

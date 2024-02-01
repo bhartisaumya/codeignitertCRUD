@@ -4,23 +4,23 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class BlogWithImage extends Model
+class testModel extends Model
 {
-    protected $table      = 'blog_with_image';
+    protected $table      = 'test_array_db';
     protected $primaryKey = '_id';
 
     protected $useAutoIncrement = true; 
 
-    protected $allowedFields = ['title', 'content', 'created_at', 'updated_at', 'deleted_at', 'imageName'];
+    protected $allowedFields = ['image'];
 
     // protected bool $allowEmptyInserts = false;
 
     // // Dates
-    protected $useTimestamps = true;
-    protected $dateFormat    = 'datetime';
-    protected $createdField  = 'created_at';
-    protected $updatedField  = 'updated_at';
-    protected $deletedField  = 'deleted_at';
+    // protected $useTimestamps = true;
+    // protected $dateFormat    = 'datetime';
+    // protected $createdField  = 'created_at';
+    // protected $updatedField  = 'updated_at';
+    // protected $deletedField  = 'deleted_at';
 
     // // Validation
     // protected $validationRules      = [];
@@ -38,7 +38,7 @@ class BlogWithImage extends Model
     // protected $afterFind      = [];
     // protected $beforeDelete   = [];
     // protected $afterDelete    = [];
-    public function getBlogData(){
-        return $this->findAll(); // Retrieve all records from the 'blog' table
-    }
+    // public function getBlogData(){
+    //     return $this->findAll(); // Retrieve all records from the 'blog' table
+    // }
 }
